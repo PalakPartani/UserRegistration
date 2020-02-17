@@ -7,16 +7,31 @@ public class UserRegistration {
     @Test
     public void givenFirstName_WhenProper_ShouldReturnTrue(){
         UserValidator validator = new UserValidator();
-        boolean result=validator.validateFirstName("Palak");
+        boolean result=validator.validateUserName("Palak");
         Assert.assertEquals(true,result);
     }
     @Test
     public void givenFirstName_WhenImproper_ShouldReturnFalse(){
         UserValidator validator = new UserValidator();
-        boolean result=validator.validateFirstName("Pa");
+        boolean result=validator.validateUserName("kt");
         Assert.assertEquals(false,result);
     }
+    @Test
+    public void givenLastName_WhenProper_ShouldReturnTrue() {
+        UserValidator validator = new UserValidator();
+        boolean result = validator.validateUserName("Xyz");
+        Assert.assertEquals(true, result);
     }
+
+    @Test
+    public void givenLastName_WhenImproper_ShouldReturnFalse(){
+        UserValidator validator = new UserValidator();
+        boolean result=validator.validateUserName("Pp");
+        Assert.assertEquals(false,result);
+    }
+
+
+}
 
 
 
