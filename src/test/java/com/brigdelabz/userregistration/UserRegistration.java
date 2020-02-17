@@ -30,7 +30,19 @@ public class UserRegistration {
         Assert.assertEquals(false,result);
     }
 
+    @Test
+    public void givenEmailId_WhenProper_ShouldReturnTrue() {
+        UserValidator validator = new UserValidator();
+        boolean result=validator.validateEmailId("abc.xyz@bl.co.in");
+        Assert.assertEquals(true,result);
+    }
 
+    @Test
+    public void givenEmailId_WhenProper_ShouldReturnFalse() {
+        UserValidator validator = new UserValidator();
+        boolean result=validator.validateEmailId("abc.@gmail.com");
+        Assert.assertEquals(false,result);
+    }
 }
 
 
