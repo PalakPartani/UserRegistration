@@ -3,7 +3,7 @@ package com.brigdelabz.userregistration;
 import org.junit.Assert;
 import org.junit.Test;
 
-public class UserRegistration {
+public class UserRegistrationTest {
     @Test
     public void givenFirstName_WhenProper_ShouldReturnTrue(){
         UserValidator validator = new UserValidator();
@@ -60,25 +60,43 @@ public class UserRegistration {
     @Test
     public void givenPassword_WhenMinimumEightCharacter_Should_Return_True() {
         UserValidator validator = new UserValidator();
-        boolean result = validator.validatePassword("asdfghjk");
+        boolean result = validator.validatePassword("asdfghjk",UserValidator.PASSWORD1);
         Assert.assertEquals(true,result);
     }
 
     @Test
     public void givenPassword_WhenLessthanEightCharacter_Should_Return_False() {
         UserValidator validator=new UserValidator();
-        boolean result = validator.validatePassword("plkklp");
+        boolean result = validator.validatePassword("plkklp",UserValidator.PASSWORD1);
         Assert.assertEquals(false,result);
     }
     @Test
     public void givenPassword_WhenAtleastOneUpperCase_Should_Return_True() {
         UserValidator validator=new UserValidator();
-        boolean result = validator.validatePassword1("acdAkhdh@1");
+        boolean result = validator.validatePassword("acCVdhkhdh@1",UserValidator.PASSWORD2);
+        Assert.assertEquals(true,result);
     }
 
     @Test
-    public void givenPassword_WhenAtleastOneUpperCase_Should_Return_frue() {
+    public void givenPassword_WhenAtleastOneUpperCase_Should_Return_False() {
         UserValidator validator=new UserValidator();
-        boolean result = validator.validatePassword1("fdfgfgfdgv");
+        boolean result = validator.validatePassword("ktpppsgh",UserValidator.PASSWORD2);
+        Assert.assertEquals(false,result);
     }
+
+    @Test
+    public void givenPassword_WhenAtleastOneNumericValue_Should_Return_True() {
+        UserValidator validator=new UserValidator();
+        boolean result = validator.validatePassword("plKplk@1",UserValidator.PASSWORD3);
+        Assert.assertEquals(true,result);
+    }
+
+    @Test
+    public void givenPassword_WhenNoNumericValue_Should_Return_False() {
+        UserValidator validator=new UserValidator();
+        boolean result = validator.validatePassword("plkplk",UserValidator.PASSWORD3);
+        Assert.assertEquals(false,result);
+
+    }
+
 }
