@@ -98,5 +98,20 @@ public class UserRegistrationTest {
         Assert.assertEquals(false,result);
 
     }
+    @Test
+    public void givenPassword_WhenExactlyOneSpecialCharacter_Should_Return_True() {
+        UserValidator validator=new UserValidator();
+        boolean result = validator.validatePassword("plK_plk1",UserValidator.PASSWORD4);
+        Assert.assertEquals(true,result);
+    }
+
+    @Test
+    public void givenPassword_WhenNotExactlyOneSpecialCharacter_Should_Return_False() {
+        UserValidator validator=new UserValidator();
+        boolean result = validator.validatePassword("plkpl@!#k",UserValidator.PASSWORD4);
+        Assert.assertEquals(false,result);
+
+    }
+
 
 }

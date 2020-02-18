@@ -9,6 +9,7 @@ import java.util.regex.Pattern;
         public static final String PASSWORD1 = "^[\\w\\s]{8,}$";
         public static final String PASSWORD2 = "^(?=.*[A-Z]).{8,}$";
         public static final String PASSWORD3= "^(?=.*[A-Z])(?=.*[0-9]).{8,}";
+        public static final String PASSWORD4 = "^((?=[^\\W\\_]*[\\W\\_][^\\W\\_]*$)(?=.*[A-Z])(?=.*[0-9])[A-Za-z0-9\\W\\_]{8,})$";
 
 
 
