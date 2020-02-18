@@ -6,10 +6,10 @@ import java.util.regex.Pattern;
         private final String USERNAME = "[A-Z]{1}[A-Za-z]{2,}";
         private final String EMAILID="^\\w{3,}([-._+]\\w+)?@\\w+.[a-z]{2,4}([.][a-z]{2,4})?$";
         private final String MOBILENUMBER="^[1-9]{1,3}[ ][1-9]{1}[0-9]{9}$";
-        public static final String PASSWORD1 = "^[\\w\\s]{8,}$";
-        public static final String PASSWORD2 = "^(?=.*[A-Z]).{8,}$";
-        public static final String PASSWORD3= "^(?=.*[A-Z])(?=.*[0-9]).{8,}";
-        public static final String PASSWORD4 = "^((?=[^\\W\\_]*[\\W\\_][^\\W\\_]*$)(?=.*[A-Z])(?=.*[0-9])[A-Za-z0-9\\W\\_]{8,})$";
+        public static final String PATTERN_MINIMUM_EIGHT_CHARACTER = "^[\\w\\s]{8,}$";
+        public static final String PATTERN_ATLEAST_ONE_UPPERCASE = "^(?=.*[A-Z]).{8,}$";
+        public static final String PATTERN_ATLEAST_ONE_NUMBER= "^(?=.*[A-Z])(?=.*[0-9]).{8,}";
+        public static final String PATTERN_EXACTLY_ONE_SPECIAL_CHARACTER = "^((?=[^\\W\\_]*[\\W\\_][^\\W\\_]*$)(?=.*[A-Z])(?=.*[0-9])[A-Za-z0-9\\W\\_]{8,})$";
 
 
 

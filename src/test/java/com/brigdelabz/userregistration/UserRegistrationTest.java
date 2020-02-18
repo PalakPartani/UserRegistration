@@ -60,55 +60,55 @@ public class UserRegistrationTest {
     @Test
     public void givenPassword_WhenMinimumEightCharacter_Should_Return_True() {
         UserValidator validator = new UserValidator();
-        boolean result = validator.validatePassword("asdfghjk",UserValidator.PASSWORD1);
+        boolean result = validator.validatePassword("asdfghjk",UserValidator.PATTERN_MINIMUM_EIGHT_CHARACTER);
         Assert.assertEquals(true,result);
     }
 
     @Test
     public void givenPassword_WhenLessthanEightCharacter_Should_Return_False() {
         UserValidator validator=new UserValidator();
-        boolean result = validator.validatePassword("plkklp",UserValidator.PASSWORD1);
+        boolean result = validator.validatePassword("plkklp",UserValidator.PATTERN_MINIMUM_EIGHT_CHARACTER);
         Assert.assertEquals(false,result);
     }
     @Test
     public void givenPassword_WhenAtleastOneUpperCase_Should_Return_True() {
         UserValidator validator=new UserValidator();
-        boolean result = validator.validatePassword("acCVdhkhdh@1",UserValidator.PASSWORD2);
+        boolean result = validator.validatePassword("acCVdhkhdh@1",UserValidator.PATTERN_ATLEAST_ONE_UPPERCASE);
         Assert.assertEquals(true,result);
     }
 
     @Test
     public void givenPassword_WhenAtleastOneUpperCase_Should_Return_False() {
         UserValidator validator=new UserValidator();
-        boolean result = validator.validatePassword("ktpppsgh",UserValidator.PASSWORD2);
+        boolean result = validator.validatePassword("ktpppsgh",UserValidator.PATTERN_ATLEAST_ONE_UPPERCASE);
         Assert.assertEquals(false,result);
     }
 
     @Test
     public void givenPassword_WhenAtleastOneNumericValue_Should_Return_True() {
         UserValidator validator=new UserValidator();
-        boolean result = validator.validatePassword("plKplk@1",UserValidator.PASSWORD3);
+        boolean result = validator.validatePassword("plKplk@1",UserValidator.PATTERN_ATLEAST_ONE_NUMBER);
         Assert.assertEquals(true,result);
     }
 
     @Test
     public void givenPassword_WhenNoNumericValue_Should_Return_False() {
         UserValidator validator=new UserValidator();
-        boolean result = validator.validatePassword("plkplk",UserValidator.PASSWORD3);
+        boolean result = validator.validatePassword("plkplk",UserValidator.PATTERN_ATLEAST_ONE_NUMBER);
         Assert.assertEquals(false,result);
 
     }
     @Test
     public void givenPassword_WhenExactlyOneSpecialCharacter_Should_Return_True() {
         UserValidator validator=new UserValidator();
-        boolean result = validator.validatePassword("plK_plk1",UserValidator.PASSWORD4);
+        boolean result = validator.validatePassword("plK_plk1",UserValidator.PATTERN_EXACTLY_ONE_SPECIAL_CHARACTER);
         Assert.assertEquals(true,result);
     }
 
     @Test
     public void givenPassword_WhenNotExactlyOneSpecialCharacter_Should_Return_False() {
         UserValidator validator=new UserValidator();
-        boolean result = validator.validatePassword("plkpl@!#k",UserValidator.PASSWORD4);
+        boolean result = validator.validatePassword("plkpl@!#k",UserValidator.PATTERN_EXACTLY_ONE_SPECIAL_CHARACTER);
         Assert.assertEquals(false,result);
 
     }
