@@ -56,4 +56,19 @@ public class UserRegistration {
         boolean result = validator.validateMobileNumber("91919819100");
         Assert.assertEquals(false,result);
     }
+
+    @Test
+    public void givenPassword_WhenMinimumEightCharacter_Should_Return_True() {
+        UserValidator validator = new UserValidator();
+        boolean result = validator.validatePassword("asdfghjk");
+        Assert.assertEquals(true,result);
+    }
+
+    @Test
+    public void givenPassword_WhenLessthanEightCharacter_Should_Return_False() {
+        UserValidator validator=new UserValidator();
+        boolean result = validator.validatePassword("plkklp");
+        Assert.assertEquals(false,result);
+    }
+
 }
