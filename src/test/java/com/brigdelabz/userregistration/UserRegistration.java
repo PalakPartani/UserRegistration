@@ -38,14 +38,22 @@ public class UserRegistration {
     }
 
     @Test
-    public void givenEmailId_WhenProper_ShouldReturnFalse() {
+    public void givenEmailId_WhenImproper_ShouldReturnFalse() {
         UserValidator validator = new UserValidator();
         boolean result=validator.validateEmailId("abc.@gmail.com");
         Assert.assertEquals(false,result);
     }
+
+    @Test
+    public void givenMobileNumber_WhenProper_Should_Return_True() {
+        UserValidator validator = new UserValidator();
+        boolean result=validator.validateMobileNumber("91 9919819801");
+        Assert.assertEquals(true,result);
+    }
+    @Test
+    public void givenMobileNumber_WhenImproper_Should_Return_False() {
+        UserValidator validator = new UserValidator();
+        boolean result = validator.validateMobileNumber("91919819100");
+        Assert.assertEquals(false,result);
+    }
 }
-
-
-
-
-
