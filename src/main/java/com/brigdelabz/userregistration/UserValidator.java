@@ -6,8 +6,8 @@ import java.util.regex.Pattern;
         private final String USERNAME = "[A-Z]{1}[A-Za-z]{2,}";
         private final String EMAILID="^\\w{3,}([-._+]\\w+)?@\\w+.[a-z]{2,4}([.][a-z]{2,4})?$";
         private final String MOBILENUMBER="^[1-9]{1,3}[ ][1-9]{1}[0-9]{9}$";
-        private final String PASSWORD_RULE1 = "^[\\w\\S]{8,}$";
-
+        private final String PASSWORD_RULE1 = "^[\\w\\s]{8,}$";
+        private final String PASSWORDRULE2 = "^(?=.*[A-Z]).{8,}$";
 
         public static void main(String[] args) {
             System.out.println("Welcome to User Registration !");
@@ -30,4 +30,7 @@ import java.util.regex.Pattern;
             return Pattern.matches(PASSWORD_RULE1, password);
         }
 
+        public boolean validatePassword1(String uppercase) {
+            return Pattern.matches(PASSWORDRULE2,uppercase);
+        }
     }

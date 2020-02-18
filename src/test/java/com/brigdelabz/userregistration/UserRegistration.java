@@ -70,5 +70,15 @@ public class UserRegistration {
         boolean result = validator.validatePassword("plkklp");
         Assert.assertEquals(false,result);
     }
+    @Test
+    public void givenPassword_WhenAtleastOneUpperCase_Should_Return_True() {
+        UserValidator validator=new UserValidator();
+        boolean result = validator.validatePassword1("acdAkhdh@1");
+    }
 
+    @Test
+    public void givenPassword_WhenAtleastOneUpperCase_Should_Return_frue() {
+        UserValidator validator=new UserValidator();
+        boolean result = validator.validatePassword1("fdfgfgfdgv");
+    }
 }
